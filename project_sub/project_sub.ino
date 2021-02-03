@@ -15,14 +15,6 @@ SoftwareSerial my_serial(10,11);
 ros::NodeHandle  nh;
 
 float data[3];
-//int idx = 0;
-
-//void msg_cb2(const std_msgs::UInt16 idx_msg){
-//    
-//    idx = idx_msg.data;
-//    my_serial.print(idx);
-//    
-//  }정
 
 
 void msg_cb(const geometry_msgs::Pose2D& position_msg){
@@ -41,7 +33,7 @@ void msg_cb(const geometry_msgs::Pose2D& position_msg){
 
 
 
-//ros::Subscriber<std_msgs::UInt16> sub2("idx",&msg_cb2);
+
 ros::Subscriber<geometry_msgs::Pose2D> sub("arduino_position",&msg_cb);
 
 
